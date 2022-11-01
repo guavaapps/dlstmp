@@ -61,7 +61,7 @@ def run(model):
     print(trainX.shape)
 
     model.compile(optimizer="adam", loss="mse")
-    model.fit(trainX, trainY, epochs=50, batch_size=5, verbose=2)
+    model.fit(trainX, trainY, epochs=50, batch_size=1, verbose=2)
 
     model.save("model2")
 
