@@ -61,7 +61,7 @@ def run(model):
     print(trainX.shape)
 
     model.compile(optimizer="adam", loss="mse")
-    model.fit(trainX, trainY, epochs=2, batch_size=5, verbose=2)
+    model.fit(trainX, trainY, epochs=50, batch_size=5, verbose=2)
 
     model.save("model2")
 
@@ -100,6 +100,8 @@ def run(model):
 
         o = interpreter.get_tensor(output_details[0]["index"])
 
+        print (f"output_details - {len (output_details)}")
+        print(batch.astype ("float32").reshape (1, look_back, features))
         print(o)
 
         output.append(o)
